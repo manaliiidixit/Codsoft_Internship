@@ -6,7 +6,7 @@ from sklearn.metrics import accuracy_score, classification_report
 
 df = pd.read_csv("movie_dataset.csv")
 
-tfidf_vectorizer = TfidfVectorizer(max_features=5000)  # You can adjust the max_features based on your dataset size
+tfidf_vectorizer = TfidfVectorizer(max_features=5000)
 tfidf_matrix = tfidf_vectorizer.fit_transform(df['plot_summary'])
 
 X_train, X_test, y_train, y_test = train_test_split(tfidf_matrix, df['genre'], test_size=0.2, random_state=42)
